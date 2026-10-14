@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import './post.css';
 
@@ -46,15 +45,23 @@ function Post() {
 
         const errors = [];
 
-        if (missingFields.length >= 3) {
+        if (
+            (postType === 'Question' && missingFields.length === 3) ||
+            (postType === 'Article' && missingFields.length === 4)
+        ) {
             errors.push('Please fill in all the fields.');
-        } else if (missingFields.length === 2) {
+        } else if (missingFields.length > 0) {
+            const lastField = missingFields[missingFields.length - 1];
+            const otherFields = missingFields.slice(0, -1);
+
+            const fieldNames = otherFields.length > 0
+                ? `${otherFields.join(', ')} and ${lastField}`
+                : lastField;
+
             errors.push(
-                `Please fill in ${missingFields[0]} and ${missingFields[1]}.`
-            );
-        } else if (missingFields.length === 1) {
-            errors.push(
-                `Please fill in the ${missingFields[0]} field.`
+                missingFields.length === 1
+                    ? `Please fill in the ${lastField} field.`
+                    : `Please fill in the ${fieldNames} fields.`
             );
         }
 
@@ -100,6 +107,8 @@ function Post() {
                             checked={postType === 'Question'}
                             onChange={() => {
                                 setPostType('Question');
+                                setTitle('');
+                                setTags('');
                                 setError([]);
                                 setSuccess('');
                             }}
@@ -115,6 +124,8 @@ function Post() {
                             checked={postType === 'Article'}
                             onChange={() => {
                                 setPostType('Article');
+                                setTitle('');
+                                setTags('');
                                 setError([]);
                                 setSuccess('');
                             }}
