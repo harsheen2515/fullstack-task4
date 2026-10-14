@@ -1,0 +1,432 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #263238;
+    background-color: #f4f7fa;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 60px;
+
+    background-color: #ffffff;
+
+    border-bottom: 1px solid #e1e8ed;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 10;
+}
+
+
+/* DEV@Deakin */
+
+.logo {
+    color: #245b7a;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #34495e;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #0a72ae;
+}
+
+
+/* =========================
+   BANNER
+========================= */
+
+.banner {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 45px auto;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    box-shadow: 0 8px 25px #d5dfe6;
+}
+
+.banner img {
+    width: 100%;
+    height: 380px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Banner Hover */
+
+.banner-text {
+    display: none;
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 18px;
+
+    background-color: rgba(27, 61, 82, 0.92);
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 19px;
+
+    font-weight: bold;
+}
+
+.banner:hover .banner-text {
+    display: block;
+}
+
+
+/* =========================
+   AUTHOR PROFILE
+========================= */
+
+.profile {
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background-color: white;
+}
+
+.profile img {
+    width: 140px;
+    height: 140px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid #e3edf3;
+
+    box-shadow: 0 6px 18px #cbd8df;
+}
+
+.profile p {
+    max-width: 650px;
+
+    margin: 25px auto 0;
+
+    color: #5b6b75;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio {
+    text-align: center;
+
+    padding: 75px 30px;
+}
+
+.portfolio h2 {
+    margin-bottom: 45px;
+
+    color: #1f4f6b;
+
+    font-size: 30px;
+
+    font-weight: normal;
+}
+
+
+/* Project Card */
+
+.project {
+    display: inline-block;
+
+    vertical-align: top;
+
+    width: 40%;
+
+    max-width: 380px;
+
+    margin: 15px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 6px 20px #d8e1e7;
+
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 28px #cbd6dd;
+}
+
+
+/* Project Image */
+
+.project img {
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+
+/* Project Heading */
+
+.project h3 {
+    margin: 18px 0 10px;
+
+    color: #245b7a;
+
+    font-size: 21px;
+}
+
+
+/* Project Description */
+
+.project p {
+    margin-bottom: 18px;
+
+    color: #64747d;
+
+    font-size: 14px;
+}
+
+
+/* GitHub Link */
+
+.project a {
+    display: inline-block;
+
+    color: white;
+
+    background-color: #245b7a;
+
+    padding: 9px 20px;
+
+    border-radius: 20px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.project a:hover {
+    background-color: #183f56;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    text-align: center;
+
+    padding: 75px 30px;
+
+    background-color: white;
+}
+
+.gallery h2 {
+    margin-bottom: 40px;
+
+    color: #1f4f6b;
+
+    font-size: 30px;
+
+    font-weight: normal;
+}
+
+.gallery-container {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.gallery-container img {
+    display: inline-block;
+
+    width: 23%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    margin: 5px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px #d5dfe5;
+
+    transition: 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.04);
+
+    box-shadow: 0 8px 20px #c5d1d8;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+
+    padding: 65px 20px;
+
+    background-color: #e7f0f5;
+}
+
+.contact h2 {
+    margin-bottom: 15px;
+
+    color: #1f4f6b;
+
+    font-size: 28px;
+}
+
+.contact p {
+    color: #566a75;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        padding: 20px 25px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .banner {
+        width: 94%;
+    }
+
+    .banner img {
+        height: 300px;
+    }
+
+    .project {
+        width: 80%;
+    }
+
+    .gallery-container img {
+        width: 45%;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    nav {
+        padding: 18px;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .banner img {
+        height: 240px;
+    }
+
+    .project {
+        width: 90%;
+
+        margin: 10px 0;
+    }
+
+    .gallery-container img {
+        width: 90%;
+
+        height: 200px;
+    }
+}
